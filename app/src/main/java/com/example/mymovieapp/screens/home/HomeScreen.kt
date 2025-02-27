@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.mymovieapp.MovieRow
+import com.example.mymovieapp.navigation.MovieScreens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -67,6 +68,7 @@ fun MainContent(
             items(items = movieList) {
                 MovieRow(it, onItemClick = { movie ->
                     Log.d("TAG", movie)
+                    navController.navigate(route = MovieScreens.DetailedScreen.name)
                 })
             }
 
